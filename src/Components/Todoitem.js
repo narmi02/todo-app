@@ -15,6 +15,7 @@ const Todoitem = (props) => {
   }
   const handleclick = () => {
     updatetodo(todo.id, tod.ecompleted)
+    setvis(false)
   }
 
   const handleonchange = (e) => {
