@@ -7,17 +7,18 @@ import Addtodo from './Addtodo'
 
 const Todo = () => {
 const context=useContext(todocontext)
-const {gettodo,todos}=context
+const {todos,gettodo}=context
+
 useEffect(()=>{
-    gettodo()
+  gettodo()
 },[])
+
   return (
     <>
     <Addtodo/>
-
     <div className='row'>
         {todos&& todos.map((todo,index)=>{
-          return <div className='col-md-4'>
+          return <div key={index} className='col-md-4'>
                  <Todoitem todo={todo} index={index} key={todo.id}/>
             </div>
         })}
